@@ -30,6 +30,24 @@ class Queue
         arr[rear] = item;
         count++;
     }
+    public int dequeue()
+    {
+        // check for queue underflow
+        if (isEmpty())
+        {
+            System.out.println("Underflow\nProgram Terminated");
+            System.exit(-1);
+        }
+ 
+        int x = arr[front];
+ 
+        System.out.println("Removing " + x);
+ 
+        front = (front + 1) % capacity;
+        count--;
+ 
+        return x;
+    }
 }
 class Main
 {
@@ -42,6 +60,20 @@ class Main
         q.enqueue(3);
  
         System.out.println("The front element is " + q.peek());
+	q.dequeue();
+        System.out.println("The front element is " + q.peek());
+ 
+        System.out.println("The queue size is " + q.size());
+ 
+        q.dequeue();
+        q.dequeue();
+ 
+        if (q.isEmpty()) {
+            System.out.println("The queue is empty");
+        }
+        else {
+            System.out.println("The queue is not empty");
+        }
         
     }
 }
