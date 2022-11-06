@@ -56,4 +56,26 @@ class Stack {
   public Boolean isEmpty() {
     return top == -1;
   }
+
+  public void printStack() {
+  
+	  for(int i=0;i<arr.length;i++)
+		  System.out.println(arr[i]);
+  
+  }
+}
+
+public class Main{
+
+public static void main(String[] args) {
+
+}
+	Stack MyStack = new Stack(5);
+	MyStack.push(1);
+	MyStack.push(3);
+	MyStack.push(5);
+	MyStack.printStack();
+	MyStack.pop();
+	MyStack.printStack();
+	
 }
