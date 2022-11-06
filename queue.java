@@ -15,6 +15,21 @@ class Queue
         rear = -1;
         count = 0;
     }
+    public void enqueue(int item)
+    {
+        // check for queue overflow
+        if (isFull())
+        {
+            System.out.println("Overflow\nProgram Terminated");
+            System.exit(-1);
+        }
+ 
+        System.out.println("Inserting " + item);
+ 
+        rear = (rear + 1) % capacity;
+        arr[rear] = item;
+        count++;
+    }
 }
 class Main
 {
@@ -22,7 +37,11 @@ class Main
     {
         // create a queue of capacity 5
         Queue q = new Queue(5);
+ 	q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
  
+        System.out.println("The front element is " + q.peek());
         
     }
 }
